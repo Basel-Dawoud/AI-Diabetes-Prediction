@@ -1,91 +1,62 @@
 # Diabetes Prediction and Analysis
 
-## Overview
+This repository contains a comprehensive analysis and machine learning project on a diabetes dataset. The project demonstrates data preprocessing, exploratory data analysis, regression, classification, deep learning, and clustering techniques using various tools and libraries in Python.
 
-Welcome to the Diabetes Prediction Challenge! This competition invites participants to explore and apply machine learning techniques to a diabetes dataset, tackling three different types of tasks: regression, classification, and unsupervised learning. Whether you're just starting out or are a seasoned data scientist, this challenge provides a comprehensive platform to showcase your skills across various machine learning paradigms.
+## Project Overview
 
-## Goal
+### 1. Data Loading and Exploration
+- **Loading Data**: Reads a diabetes dataset from a CSV file.
+- **Exploring Data**: Displays basic statistics and information about the dataset.
 
-Your objective is to leverage the diabetes dataset to address the following tasks:
+### 2. Data Preprocessing
+- **Handling Missing Values**: Replaces zeros with NaN in specific columns and fills missing values with column medians.
+- **Feature Scaling**: Standardizes the features to have zero mean and unit variance.
 
-1. **Regression Task**: Predict the Diabetes Pedigree Function based on the diagnostic measurements.
-2. **Classification Task**: Classify patients into "high risk" (1) or "low risk" (0) categories based on their diabetes progression.
-3. **Unsupervised Learning Task**: Cluster patients based on their baseline medical measurements using unsupervised learning techniques.
+### 3. Visualization
+- **Scatter Plot**: Visualizes the relationship between 'Skin Thickness' and 'Diabetes Pedigree Function'.
+- **Histograms**: Shows the distribution of each feature.
+- **Correlation Heatmap**: Displays correlations between features.
 
-Participants will be assessed not only on model accuracy but also on their ability to interpret the data and uncover meaningful patterns.
+### 4. Regression Analysis
+- **Linear Regression**: Trains and evaluates a Linear Regression model, compares it with Ridge and Lasso regressions.
+- **Ridge and Lasso Regression**: Applies regularization techniques and compares their performance.
 
-## How to Get Started
+### 5. Classification Task
+- **K-Nearest Neighbors (KNN)**: Classifies patients' diabetes risk and evaluates performance using accuracy, confusion matrix, and classification report.
+- **KNN from Scratch**: Implements a KNN algorithm from scratch to classify data points.
 
-Follow these steps to get started with the competition:
+### 6. Deep Learning Classification
+- **Neural Network**: Builds and trains a deep learning model using TensorFlow and Keras for binary classification. Evaluates model accuracy and plots training history.
 
-1. **Download the Dataset**: Access the diabetes dataset from the Data tab.
-2. **Explore the Data**: Understand the dataset's structure, perform necessary preprocessing, and gain insights into the features.
-3. **Tackle Each Task**:
-   - **Regression**: Develop a model to predict the Diabetes Pedigree Function.
-   - **Classification**: Create a model to classify patients into risk categories based on the Outcome variable.
-   - **Clustering**: Apply unsupervised learning methods to discover clusters of patients based on baseline features.
+### 7. Clustering
+- **K-Means Clustering**: Applies K-Means clustering to segment patients into clusters and visualizes the clusters.
 
-4. **Document Your Work**: Add any tasks and observations to your notebook.
-5. **Submit Your Notebook**: Ensure that your notebook includes all necessary code and explanations before submitting it.
+## Installation
 
-## Domain Background
+To run the code in this repository, you need to have Python and the following libraries installed:
 
-Diabetes is a chronic condition that affects how the body processes blood sugar (glucose). Proper management of diabetes is essential to prevent serious complications, and machine learning can significantly contribute to predicting and managing the disease. This dataset includes various medical measurements used to predict disease progression and categorize patient risk.
+- `numpy`
+- `pandas`
+- `scikit-learn`
+- `matplotlib`
+- `seaborn`
+- `tensorflow` (for deep learning)
+- `keras` (for deep learning)
 
-## Tasks Overview
+You can install the required libraries using pip:
 
-### Regression Task
+```bash
+pip install numpy pandas scikit-learn matplotlib seaborn tensorflow
+```
 
-- **Objective**: Predict the Diabetes Pedigree Function (continuous outcome).
-- **Goal**: Model continuous outcomes and understand factors contributing to disease progression.
+## Usage
 
-### Classification Task
+1. **Load the Dataset**: Ensure `diabetes.csv` is in the same directory as the script or provide the correct path.
+2. **Run Analysis**: Execute the Python script or Jupyter notebook to perform data preprocessing, visualization, regression, classification, and clustering.
+3. **View Results**: Results will be printed to the console and visualized using plots.
 
-- **Objective**: Classify patients as "high risk" or "low risk" based on their medical measurements.
-- **Goal**: Identify key factors indicative of high or low risk.
+## Files
 
-### Unsupervised Learning Task
-
-- **Objective**: Cluster patients based on their baseline medical measurements without using the target variable.
-- **Goal**: Uncover hidden patterns and patient segments within the data.
-
-## Technical Details
-
-### Data
-
-The dataset consists of several medical features including:
-- **Pregnancies**: Number of times pregnant
-- **Glucose**: Plasma glucose concentration measured during a 2-hour oral glucose tolerance test (OGTT)
-- **BloodPressure**: Diastolic blood pressure (mm Hg)
-- **SkinThickness**: Triceps skin fold thickness (mm)
-- **Insulin**: 2-Hour serum insulin (mu U/ml)
-- **BMI**: Body mass index (kg/m²)
-- **DiabetesPedigreeFunction**: Likelihood of diabetes based on family history
-- **Age**: Age in years
-- **Outcome**: Binary target variable indicating diabetes presence (1) or absence (0)
-
-### Formatting Guidelines
-
-- **File Naming**: Name your submission files according to the task (e.g., `regression_submission.csv`, `classification_submission.csv`, `clustering_submission.csv`).
-- **Submission Limits**: You may submit up to 1 time per day for each task. Only your best submission will be considered for the leaderboard.
-- **Consistency**: Ensure that Id values in your submissions match those in the test dataset.
-- **File Format**: Submissions must be in CSV format with the specified column names and order.
-
-## Evaluation
-
-### Regression Task
-
-- **Metric**: Mean Squared Error (MSE)
-- **Explanation**: Measures the average squared difference between predicted and actual values. Lower MSE indicates better performance.
-
-### Classification Task
-
-- **Metric**: Accuracy and ROC-AUC
-- **Explanation**: Accuracy measures the proportion of correct predictions, while ROC-AUC evaluates classification quality considering true positive and false positive rates.
-
-### Unsupervised Learning Task
-
-- **Metric**: Silhouette Score
-- **Explanation**: Measures how similar an object is to its own cluster compared to other clusters. Higher scores indicate better-defined clusters.
+- `diabetes.csv`: The dataset used for analysis.
 
 ## Good Luck!
