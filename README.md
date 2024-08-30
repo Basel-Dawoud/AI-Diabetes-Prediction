@@ -1,85 +1,91 @@
 # Diabetes Prediction and Analysis
 
-This project involves analyzing a dataset of diabetes patients and applying various machine learning approaches to predict and classify diabetes. The dataset is provided by the National Institute of Diabetes and Digestive and Kidney Diseases and includes diagnostic measurements for female patients of Pima Indian heritage.
+## Overview
 
-## Project Overview
+Welcome to the Diabetes Prediction Challenge! This competition invites participants to explore and apply machine learning techniques to a diabetes dataset, tackling three different types of tasks: regression, classification, and unsupervised learning. Whether you're just starting out or are a seasoned data scientist, this challenge provides a comprehensive platform to showcase your skills across various machine learning paradigms.
 
-The main objectives of this project are:
+## Goal
 
-1. **Data Preparation and Cleaning**: Handle missing values, standardize features, and prepare the data for modeling.
-2. **Exploratory Data Analysis**: Visualize and analyze relationships between features, specifically focusing on how skin thickness relates to the Diabetes Pedigree Function.
-3. **Regression Analysis**: Predict the Diabetes Pedigree Function using different regression models and compare their performance.
-4. **Classification**: Classify patients into high risk or low risk categories using K-Nearest Neighbors (KNN) and a Deep Learning (DL) model.
-5. **Unsupervised Learning**: Cluster patients based on their baseline medical measurements using K-Means clustering.
+Your objective is to leverage the diabetes dataset to address the following tasks:
 
-## Features
+1. **Regression Task**: Predict the Diabetes Pedigree Function based on the diagnostic measurements.
+2. **Classification Task**: Classify patients into "high risk" (1) or "low risk" (0) categories based on their diabetes progression.
+3. **Unsupervised Learning Task**: Cluster patients based on their baseline medical measurements using unsupervised learning techniques.
 
-- **Data Preparation**: Handling missing values and standardizing features.
-- **Visualization**: Plotting relationships and clusters in the dataset.
-- **Regression Models**: Linear Regression, Ridge Regression, and Lasso Regression.
-- **Classification Models**: K-Nearest Neighbors (KNN) and Deep Learning (DL) classification.
-- **Clustering**: K-Means clustering to identify patient clusters.
+Participants will be assessed not only on model accuracy but also on their ability to interpret the data and uncover meaningful patterns.
 
-## Dataset
+## How to Get Started
 
-The dataset includes the following features:
+Follow these steps to get started with the competition:
 
+1. **Download the Dataset**: Access the diabetes dataset from the Data tab.
+2. **Explore the Data**: Understand the dataset's structure, perform necessary preprocessing, and gain insights into the features.
+3. **Tackle Each Task**:
+   - **Regression**: Develop a model to predict the Diabetes Pedigree Function.
+   - **Classification**: Create a model to classify patients into risk categories based on the Outcome variable.
+   - **Clustering**: Apply unsupervised learning methods to discover clusters of patients based on baseline features.
+
+4. **Document Your Work**: Add any tasks and observations to your notebook.
+5. **Submit Your Notebook**: Ensure that your notebook includes all necessary code and explanations before submitting it.
+
+## Domain Background
+
+Diabetes is a chronic condition that affects how the body processes blood sugar (glucose). Proper management of diabetes is essential to prevent serious complications, and machine learning can significantly contribute to predicting and managing the disease. This dataset includes various medical measurements used to predict disease progression and categorize patient risk.
+
+## Tasks Overview
+
+### Regression Task
+
+- **Objective**: Predict the Diabetes Pedigree Function (continuous outcome).
+- **Goal**: Model continuous outcomes and understand factors contributing to disease progression.
+
+### Classification Task
+
+- **Objective**: Classify patients as "high risk" or "low risk" based on their medical measurements.
+- **Goal**: Identify key factors indicative of high or low risk.
+
+### Unsupervised Learning Task
+
+- **Objective**: Cluster patients based on their baseline medical measurements without using the target variable.
+- **Goal**: Uncover hidden patterns and patient segments within the data.
+
+## Technical Details
+
+### Data
+
+The dataset consists of several medical features including:
 - **Pregnancies**: Number of times pregnant
-- **Glucose**: Plasma glucose concentration a 2 hours in an oral glucose tolerance test
+- **Glucose**: Plasma glucose concentration measured during a 2-hour oral glucose tolerance test (OGTT)
 - **BloodPressure**: Diastolic blood pressure (mm Hg)
 - **SkinThickness**: Triceps skin fold thickness (mm)
 - **Insulin**: 2-Hour serum insulin (mu U/ml)
-- **BMI**: Body mass index (weight in kg/(height in m)^2)
-- **DiabetesPedigreeFunction**: Diabetes pedigree function
-- **Age**: Age (years)
-- **Outcome**: Class variable (0 or 1)
+- **BMI**: Body mass index (kg/m²)
+- **DiabetesPedigreeFunction**: Likelihood of diabetes based on family history
+- **Age**: Age in years
+- **Outcome**: Binary target variable indicating diabetes presence (1) or absence (0)
 
-## Installation
+### Formatting Guidelines
 
-To run this project, you need to have the following libraries installed:
+- **File Naming**: Name your submission files according to the task (e.g., `regression_submission.csv`, `classification_submission.csv`, `clustering_submission.csv`).
+- **Submission Limits**: You may submit up to 1 time per day for each task. Only your best submission will be considered for the leaderboard.
+- **Consistency**: Ensure that Id values in your submissions match those in the test dataset.
+- **File Format**: Submissions must be in CSV format with the specified column names and order.
 
-- numpy
-- pandas
-- scikit-learn
-- tensorflow
-- matplotlib
-- seaborn
+## Evaluation
 
-You can install these dependencies using pip:
+### Regression Task
 
-```bash
-pip install numpy pandas scikit-learn tensorflow matplotlib seaborn
-```
+- **Metric**: Mean Squared Error (MSE)
+- **Explanation**: Measures the average squared difference between predicted and actual values. Lower MSE indicates better performance.
 
-## Usage
+### Classification Task
 
-1. **Data Preparation**:
-    - Load the dataset.
-    - Replace zeros with `NaN` in specific columns and fill missing values with the median.
-    - Standardize the features.
+- **Metric**: Accuracy and ROC-AUC
+- **Explanation**: Accuracy measures the proportion of correct predictions, while ROC-AUC evaluates classification quality considering true positive and false positive rates.
 
-2. **Exploratory Data Analysis**:
-    - Visualize relationships between features.
-    - Analyze how skin thickness is related to the Diabetes Pedigree Function.
+### Unsupervised Learning Task
 
-3. **Regression Analysis**:
-    - Train and evaluate Linear Regression, Ridge Regression, and Lasso Regression models.
-    - Plot the regression lines and compare model performance using metrics such as Mean Squared Error (MSE) and R^2 Score.
+- **Metric**: Silhouette Score
+- **Explanation**: Measures how similar an object is to its own cluster compared to other clusters. Higher scores indicate better-defined clusters.
 
-4. **Classification**:
-    - Train and evaluate K-Nearest Neighbors (KNN) and Deep Learning (DL) models.
-    - Print accuracy, confusion matrix, and classification report for each model.
-
-5. **Unsupervised Learning**:
-    - Apply K-Means clustering to discover patient clusters.
-    - Visualize the clusters to understand the distribution of patients.
-
-## Results
-
-- **Regression Models**: Compare the performance of Linear Regression, Ridge Regression, and Lasso Regression based on Mean Squared Error and R^2 Score.
-- **Classification Models**: Evaluate the accuracy and classification metrics for KNN and Deep Learning models.
-- **Clustering**: Identify and visualize clusters of patients based on their medical measurements.
-
-## Conclusion
-
-This project demonstrates the application of various machine learning techniques to analyze diabetes data, predict outcomes, and classify patient risk levels. The results provide insights into the effectiveness of different models and highlight patterns in the data.
+## Good Luck!
